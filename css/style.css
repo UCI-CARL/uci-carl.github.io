@@ -51,7 +51,8 @@ a {
 a:hover,
 a:focus {
 	text-decoration: none;
-	color: #176e61;
+	/*color: #176e61;*/
+	color: #CCCCCC;
 }
 
 .light {
@@ -302,6 +303,117 @@ hr {
 
 
 
+/* button 
+----------------------------------------------
+http://www.webdesignerwall.com/demo/css-buttons.html
+*/
+
+.button {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px/100%;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 0 15px rgba(255,255,255,.2);
+	-moz-box-shadow: 0 0 15px rgba(255,255,255,.2);
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+.bigrounded {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+}
+.medium {
+	font-size: 12px;
+	padding: .4em 1.5em .42em;
+}
+.small {
+	font-size: 11px;
+	padding: .2em 1em .275em;
+}
+
+.black {
+	color: #d7d7d7;
+	border: solid 1px #333;
+	background: #333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+.black:hover {
+	background: #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000));
+	background: -moz-linear-gradient(top,  #444,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000');
+}
+.black:active {
+	color: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
+	background: -moz-linear-gradient(top,  #000,  #444);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
+}
+
+.gray {
+	color: #e9e9e9;
+	border: solid 1px #555;
+	background: #6e6e6e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#575757));
+	background: -moz-linear-gradient(top,  #888,  #575757);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#888888', endColorstr='#575757');
+}
+.gray:hover {
+	background: #616161;
+	background: -webkit-gradient(linear, left top, left bottom, from(#757575), to(#4b4b4b));
+	background: -moz-linear-gradient(top,  #757575,  #4b4b4b);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#757575', endColorstr='#4b4b4b');
+}
+.gray:active {
+	color: #afafaf;
+	background: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#888));
+	background: -moz-linear-gradient(top,  #575757,  #888);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#888888');
+}
+
+.white {
+	color: #606060;
+	border: solid 1px #b7b7b7;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+.white:hover {
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+	background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+.white:active {
+	color: #999;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+	background: -moz-linear-gradient(top,  #ededed,  #fff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+}
+
+
 /* ===========================
 --- Intro
 ============================ */
@@ -319,19 +431,41 @@ hr {
 
 #intro.intro {
 	padding:30% 0 0 0;
+	width: 100%; 
+	height: 100%;
+	min-height: 100%;
 }
 
-.intro .slogan {
+#intro .container {
+	width: 100%;
+}
+
+#intro .row {
 	position: absolute;
-	bottom: 20%;
+	bottom: 25%;
+	width: 100%;
+}
+
+#intro .slogan {
 	text-align: center;
 	background: rgba(125, 125, 125, 0.5);
-	padding: 20px 20%;
+	padding: 20px 10%;
+	margin-bottom: 15px;
 }
 
-.intro .page-scroll {
+#intro .page-scroll {
 	text-align: center;
 }
+
+
+#intro .button {
+	width: 40%;
+	padding: 5px;
+	font-weight: bold;
+}
+
+
+
 
 .brand-heading {
 	font-size: 40px;
@@ -344,221 +478,28 @@ hr {
 .intro .slogan h2 {
 	color: #FFF;
 	text-shadow: none;
-	font-size: 40px;
-	line-height: 45px;
+	font-size: 40px/200%;
+	line-height: 45px/150%;
 	font-weight: 600;
 	font-family: Montserrat, sans-serif;
 	background-color: rgba(0, 0, 0, 0);
 	text-decoration: none;
-	text-transform: uppercase;
+	text-transform: none;
 	border-width: 0px;
 	border-color: #000;
 	border-style: none;
 	text-shadow: -1px 0 1px #000;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .intro .slogan h4 {
 	color: #fff;
 	text-shadow: -1px 1px 1px #000;
+	text-transform: none;
 	margin: 0;
 }
 
 
-
-
-#story {
-	width:100%;
-	position:relative;
-	background-image: url(../img/bg-story.gif);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	
-	/*background: url(../worldmap-2.gif) no-repeat top center;*/
-}
-
-#ourstory {
-	text-align: justify;
-	margin-top: 100px;
-	margin-bottom: 180px;
-	background: rgba(255,255,255,0.5);
-}
-
-
-
-#proposal {
-	width:100%;
-	position:relative;
-	background-image: url(../img/proposal.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top center;
-	
-	/*background: url(../worldmap-2.gif) no-repeat top center;*/
-}
-
-
-/* ===========================
---- About
-============================ */
-
-.boxed-grey {
-	background: #f9f9f9;
-	padding: 20px;
-}
-
-.team h5 {
-	margin-bottom: 10px;
-}
-
-.team p.subtitle {
-	margin-bottom: 10px;
-}
-
-.avatar {
-	margin-bottom: 20px;
-}
-
-.team-social {
-	margin-left: 0;
-	padding-left: 0;
-	
-}
-
-.team-social {
-	text-align: center;
-}
-
-.team-social li{
-	display: inline-block;
-	margin:0 !important;
-	padding:0;
-}
-
-
-.team-social a{
-	margin:0;
-	padding:0;
-	display: block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	background: #3bbec0;
-	color: #fff;
-	-webkit-transition: background .3s ease-in-out;
-	transition: background .3s ease-in-out;
-}
-.team-social a i{
-	text-align: center;
-	margin:0;
-	padding:0;
-}
-.team-social .social-facebook a{background: #3873ae;}
-.team-social .social-twitter a{background: #62c6f8;}
-.team-social .social-dribble a{background: #d74980;}
-.team-social .social-deviantart a{background: #8da356;}
-.team-social .social-google a{background: #000;}
-.team-social .social-vimeo a{background: #51a6d3;}
-.team-social .social-facebook a:hover{background: #4893ce;}
-.team-social .social-twitter a:hover{background: #82e6ff;}
-.team-social .social-dribble a:hover{background: #f769a0;}
-.team-social .social-deviantart a:hover{background: #adc376;}
-.team-social .social-google a:hover{background: #333;}
-.team-social .social-vimeo a:hover{background: #71c6f3;}
-
-
-/* ===========================
---- Services
-============================ */
-
-.service-icon {
-	margin-bottom: 20px;
-}	
-
-
-
-/* ===========================
---- Contact
-============================ */
-
-form#contact-form .form-group label {
-	text-align: left !important;
-	display: block;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 12px;
-}
-form#contact-form input,form#contact-form select,form#contact-form textarea {
-	border-radius: 0;
-	border: 1px solid #eee;
-	-webkit-box-shadow: none;
-	box-shadow:  none;
-}
-
-form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
-	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-}
-.input-group-addon {
-	background-color: #fefefe;
-	border: 1px solid #eee;
-	border-radius: 0;
-}
-
-.widget-contact {
-	text-align: left;
-}
-
-
-.company-social {
-	margin-left: 0;
-	padding-left: 0;
-	margin-top: 10px;
-}
-
-.company-social {
-	text-align: left;
-}
-
-.company-social li{
-	display: inline-block;
-	margin:0 !important;
-	padding:0;
-}
-
-
-.company-social a{
-	margin:0;
-	padding:0;
-	display: block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	background: #3bbec0;
-	color: #fff;
-	-webkit-transition: background .3s ease-in-out;
-	transition: background .3s ease-in-out;
-}
-.company-social a i{
-	text-align: center;
-	margin:0;
-	padding:0;
-}
-.company-social .social-facebook a{background: #3873ae;}
-.company-social .social-twitter a{background: #62c6f8;}
-.company-social .social-dribble a{background: #d74980;}
-.company-social .social-deviantart a{background: #8da356;}
-.company-social .social-google a{background: #000;}
-.company-social .social-vimeo a{background: #51a6d3;}
-.company-social .social-facebook a:hover{background: #4893ce;}
-.company-social .social-twitter a:hover{background: #82e6ff;}
-.company-social .social-dribble a:hover{background: #f769a0;}
-.company-social .social-deviantart a:hover{background: #adc376;}
-.company-social .social-google a:hover{background: #333;}
-.company-social .social-vimeo a:hover{background: #71c6f3;}
 
 
 
