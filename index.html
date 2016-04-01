@@ -1,8 +1,141 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Cognitive Anteater Robotics Lab (CARL)</h1>
-<h3>University of California, Irvine</h3>
-<p>New GitHub Pages website coming soon.</p>
-</body>
-</html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Cognitive Anteater Robotics Laboratory (CARL), UC Irvine</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/animate.css" rel="stylesheet" />
+	<!-- Squad theme CSS -->
+	<link href="css/style.css" rel="stylesheet"/>
+	<link href="color/default.css" rel="stylesheet"/>
+
+	<!-- PrettyPhoto -->
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<!-- ============= BEGIN INTRO ============= -->
+	<section id="intro" class="intro" style="width: 100%; min-height: 100%">
+		<a href="https://www.github.com/UCI-CARL" target="_blank">
+			<div class="slogan wow fadeInDown" data-wow-delay="1s">
+				<h2>Cognitive Anteater Robotics Laboratory (CARL)</h2>
+				<h4>University of California, Irvine</h4>
+			</div>
+		</a>
+	</section>
+	<!-- ============= END INTRO ============= -->
+
+	<!-- Jquery -->
+	<script src="js/jquery-1.11.2.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- PrettyPhoto -->
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+
+	<!-- Isotope -->
+	<script src="js/isotope.pkgd.min.js" type="text/javascript" ></script>
+
+	<script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/wow.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="js/custom.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+		// PrettyPhoto
+		$(document).ready(function(){
+			$("a[rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',
+				slideshow:false,overlay_gallery: true,social_tools:false,deeplinking:false});
+		});
+		</script>
+
+		<script type="text/javascript" charset="utf-8">
+		/*************************
+		Gallery Scripts
+		*************************/
+
+		var $container = $('.img-gallery');
+		$container.isotope({
+			filter: '*',
+			animationOptions: {
+				duration: 750,
+				easing: 'linear',
+				queue: false,
+			}
+		});
+
+		$('#gall nav.primary ul a').click(function(){
+			var selector = $(this).attr('data-filter');
+			$container.isotope({
+				filter: selector,
+				animationOptions: {
+					duration: 750,
+					easing: 'linear',
+					queue: false,
+				}
+			});
+			return false;
+		});
+
+		var $optionSets = $('#gall nav.primary ul'),
+		$optionLinks = $optionSets.find('a');
+
+		$optionLinks.click(function(){
+			var $this = $(this);
+			  // don't proceed if already selected
+			  if ( $this.hasClass('selected') ) {
+			  	return false;
+			  }
+			  var $optionSet = $this.parents('#gall nav.primary ul');
+			  $optionSet.find('.selected').removeClass('selected');
+			  $this.addClass('selected'); 
+			});
+
+		/*************************
+		End of Gallery Scripts
+		*************************/
+
+
+		$(function(){
+			//  Section Experience / Education
+			//  ---------------------------------------------------
+			//  Collapse div .panel-body
+			var resumeCollapse = function (){
+				var experience = $('#experience .collapse');
+				var ww = Math.max($(window).width(), window.innerWidth);
+
+				//  If device is a Movil < 768 (smartphones)
+				if (ww < 768){
+					experience.collapse('show');
+				}
+			};
+
+			//  For use smartload function is neccesary debouncer.js
+			//  Call resumeCollapse() when window is loaded.
+			$(window).smartload(function(){
+				resumeCollapse();
+			});
+
+			//  For use smartresize function is neccesary debouncer.js
+			//  Call resumeCollapse() when window is resized.
+			$(window).smartresize(function(){
+				resumeCollapse();
+			});
+		});
+		</script>
+
+	</body>
+	</html>
