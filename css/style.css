@@ -419,10 +419,11 @@ http://www.webdesignerwall.com/demo/css-buttons.html
 ============================ */
 
 .intro {
+	padding: 10% 0;
 	width: 100%;
 	position:relative;
 	background-image: url(http://www.socsci.uci.edu/~jkrichma/carlteampicture/CARL-Team-2016.jpg);
-	background-size: 100% 100%;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 	
