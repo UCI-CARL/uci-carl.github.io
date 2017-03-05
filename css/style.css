@@ -422,7 +422,7 @@ http://www.webdesignerwall.com/demo/css-buttons.html
 	height:100%;
 	position:relative;
 	background-image: url(http://www.socsci.uci.edu/~jkrichma/carlteampicture/CARL-Team-2016.jpg);
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 	
